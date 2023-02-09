@@ -41,3 +41,24 @@ This project was created for learning React
 3. 然后创建 `craco.config.js` 文件，并在其中添加相应的内容，并导出该模块
 
 4. 最后在 package.json 中用 craco 的命令接管 react 之前的命令
+
+注意：
+在 package.json 文件中不要使用注释内容
+上面修改完成之后，需要重新启动项目
+
+## jsconfig.json
+
+1. 该文件是 vscode 的配置文件
+
+2. 创建该文件的目的是在输入 @ 之后会显示文件夹路径
+
+3. 在 jsconfig.json 文件中添加相应的内容
+
+## 配置登录界面
+
+1. 上网搜索一张登录界面的背景图片
+
+2. 创建 index.scss 用来控制 Login 界面的样式，在该文件中 Login 设置背景图片，width 和 height
+   设置为 100%，并设置背景图片
+
+3. 为 login-container 设置显示字体，并调整样式，自己瞎调，自己觉得怎么好看怎么来

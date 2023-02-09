@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 // import Login from './pages/Login/index'
 import Login from '@/pages/Login'
-import Layout from './pages/Layout'
+import Layout from '@/pages/Layout'
 
 function App () {
   return (
