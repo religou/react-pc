@@ -31,3 +31,13 @@ This project was created for learning React
 3. 在 index.js 中使用 `import 'antd/dist/reset.css'` 引入 antd 的 css
 
 4. 然后在相应的界面中使用组件
+
+## craco 的使用
+
+1. 使用 craco 是为了更方便地进行全局配置，包括：别名的配置
+
+2. 引用之前，需要添加相应的包，npm 命令为 `npm add @craco\craco -D`
+
+3. 然后创建 `craco.config.js` 文件，并在其中添加相应的内容，并导出该模块
+
+4. 最后在 package.json 中用 craco 的命令接管 react 之前的命令
