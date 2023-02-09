@@ -21,3 +21,13 @@ This project was created for learning React
 
 4. 在 App.js 中使用 BrowseRouter 包裹 App 组件，并在其中添加 Routes，Routes 中添加 Route，并
    使用 Route 来关联 path 和 element，而 element 调用的内容则是上面创建的两个组件
+
+## antd 的使用
+
+1. 使用 antd 是为了更方便地使用 UI 组件
+
+2. 引用之前，需要添加相应的包，npm 命令为 npm add antd -v
+
+3. 在 index.js 中使用 `import 'antd/dist/reset.css'` 引入 antd 的 css
+
+4. 然后在相应的界面中使用组件

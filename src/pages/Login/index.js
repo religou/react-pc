@@ -1,7 +1,12 @@
+import { Button, Space } from 'antd'
+
 function Login () {
   return (
     <div>
-      Login
+      登录界面
+      <Space wrap>
+        <Button type="primary">登录</Button>
+      </Space>
     </div>
   )
 }
