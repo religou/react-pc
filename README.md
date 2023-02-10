@@ -62,3 +62,18 @@ This project was created for learning React
    设置为 100%，并设置背景图片
 
 3. 为 login-container 设置显示字体，并调整样式，自己瞎调，自己觉得怎么好看怎么来
+
+## 登录界面表单校验
+
+1. 在 Form.item 中添加 rules 属性，该属性的内容为对象
+
+2. 触发校验的方式为 validateTrigger，需要在 Form 层面先指定，然后在 Form.Item 层面上指定才会
+   生效
+
+## 登录界面事件处理
+
+1. 登录界面并没有按钮关联函数或者是事件，而是指定 button 的 htmlType 为 submit，那么点击时会自
+   动认为该按钮需要绑定的函数
+
+2. 绑定的函数需要在函数组件中使用 Function 定义好，并在 Form 层面关联定义好的函数，例如：onFinish
+   为提交成功的函数，而 onFinishFailed 则为提交失败的函数
