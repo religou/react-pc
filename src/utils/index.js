@@ -1,5 +1,5 @@
 // 统一在这边导出工具
-import http from './http'
+import { http } from './http'
 
 export { http }
 

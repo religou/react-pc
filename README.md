@@ -77,3 +77,15 @@ This project was created for learning React
 
 2. 绑定的函数需要在函数组件中使用 Function 定义好，并在 Form 层面关联定义好的函数，例如：onFinish
    为提交成功的函数，而 onFinishFailed 则为提交失败的函数
+
+## 使用 mobx 存储并编写登录逻辑
+
+1. 使用 mobx 先添加使用的 package，npm 命令为 `npm add mobx mobx-react-lite -S`
+
+2. 在 store 文件夹中，创建 index.js 和 login.Store.js 文件
+
+3. 在 login.Store.js 文件中定义 LoginStore 类，并初始化变量、创建构造器、更新逻辑
+
+4. 在 index.js 文件中统一管理 store/xxx.Store.js
+
+5. 最后在 Login/index.js 中调用 useStore 来引用逻辑方法

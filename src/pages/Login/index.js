@@ -1,14 +1,33 @@
-import { Form, Input, Checkbox, Button } from 'antd'
+import { Form, Input, Checkbox, Button, message } from 'antd'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
 import './index.scss'
 
+import { useStore } from '@/store'
+
 function Login () {
+  const { loginStore } = useStore()
+  const navigate = useNavigate()
 
   // 登录成功
-  function onFinish (values) {
+  async function onFinish (values) {
     console.log(values)
-    // todo: 登录逻辑
+    try {
+      // 登录逻辑
+      await loginStore.getToken({
+        mobile: values.username,
+        code: values.password
+      })
+
+      // 登录成功之后，界面跳转到首页
+      navigate('/')
+
+      // 界面提示'登录成功'
+      message.success('登录成功')
+    } catch (e) {
+      message.error(e.response?.data?.message || '登录失败')
+    }
   }
 
   // 登录失败
@@ -25,22 +44,27 @@ function Login () {
           validateTrigger={['onBlur', 'onChange', '']}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
+          initialValues={{
+            mobile: '13911111111',
+            code: '246810',
+            remember: true
+          }}
         >
           <Form.Item
             name="username"
             rules={[
               {
                 required: true,
-                message: '请输入登录邮箱!',
+                message: '请输入手机号!',
               },
               {
-                pattern: '^[a-zA-Z]*@hengrui.com$',
-                message: '请输入正确格式邮箱',
+                pattern: /^1[3-9]\d{9}$/,
+                message: '手机号码格式不对',
                 validateTrigger: 'onBlur'
               }
             ]}
           >
-            <Input size="large" placeholder="邮箱" prefix={<UserOutlined />} allowClear />
+            <Input size="large" placeholder="手机号" prefix={<UserOutlined />} allowClear />
           </Form.Item>
 
           <Form.Item
