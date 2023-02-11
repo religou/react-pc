@@ -89,3 +89,9 @@ This project was created for learning React
 4. 在 index.js 文件中统一管理 store/xxx.Store.js
 
 5. 最后在 Login/index.js 中调用 useStore 来引用逻辑方法
+
+## token 的持久化
+
+1. 在 util 中建立 token.js 工具，并在其中编写三个函数 (setToken、getToken、removeToken)
+
+2. 然后在 login.Store.js 中调用 getToken、setToken
