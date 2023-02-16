@@ -95,3 +95,13 @@ This project was created for learning React
 1. 在 util 中建立 token.js 工具，并在其中编写三个函数 (setToken、getToken、removeToken)
 
 2. 然后在 login.Store.js 中调用 getToken、setToken
+
+## 路由鉴权
+
+1. 由于路由鉴权的原理是将需要验证的组件包裹在公共组件中
+
+2. 首先在 components 文件夹中创建 AuthComponent 文件
+
+3. 然后在 App.js 中使用 AuthComponent 包裹 Layout 组件
+
+4. 当访问 Layout 路由时，会先到 AuthComponent 组件中确认当前是否存在 Token

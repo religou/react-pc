@@ -4,6 +4,8 @@ import './App.css'
 import Login from '@/pages/Login'
 import Layout from '@/pages/Layout'
 
+import { AuthComponent } from '@/components/AuthComponent'
+
 function App () {
   return (
 
@@ -12,12 +14,16 @@ function App () {
       <div className='app'>
         <Routes>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/" element={<Layout />}></Route>
+          <Route path="/" element={
+            <AuthComponent>
+              <Layout />
+            </AuthComponent>
+          }>
+          </Route>
         </Routes>
       </div>
+
     </BrowserRouter>
-
-
   )
 }
 
