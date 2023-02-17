@@ -11,10 +11,15 @@ const { Header, Content, Sider } = Layout
 
 // Header 部分的数据
 // todo: 该部分数据应该来自于后台请求的数据，且该部分数据可以由系统配置的
-const items1 = ['首页', '医学模块', 'PV模块', '数据管理模块', '统计编程模块', '人员管理', '系统配置'].map((key) => ({
-  key: key,
-  label: `${key}`,
-}))
+const items1 = [['/', '首页'], ['/medical', '医学模块'], ['/pv', 'PV模块'], ['/dm', '数据管理模块']
+  , ['/stat', '统计编程模块'], ['/user', '人员管理'], ['/systemconfig', '系统配置']].map((key) => ({
+    key: key[1],
+    label: (
+      <a href={key[0]}>
+        {key[1]}
+      </a>
+    )
+  }))
 
 // Left Side 部分的数据
 // todo: 该部分数据应该来自于后台请求的数据，且该部分数据可以由系统配置的
@@ -54,7 +59,7 @@ const MainLayout = () => {
         </div>
       </Header>
       <Layout>
-        <Sider
+        {/* <Sider
           width={200}
           style={{
             background: colorBgContainer,
@@ -95,7 +100,9 @@ const MainLayout = () => {
           >
             <Outlet />
           </Content>
-        </Layout>
+        </Layout> */}
+
+        <Outlet />
       </Layout>
     </Layout>
   )

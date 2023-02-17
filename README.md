@@ -123,3 +123,17 @@ This project was created for learning React
 
 4. 在 Layout/index.js 中 MainLayout 中 Content 标签中使用 <Outlet /> 来设置这些
    二级路由的出口
+
+## 二级路由跳转配置
+
+1. 在二级路由配置完成之后，修改 Layout/index.js 中的 items1
+
+2. 由原来的一维数组修改为二维数组，二维数组中的第一个值为跳转的 link，第二个值为显示的 Label
+
+3. 修改 label 中的内容，由 ${key} 修改为
+   (
+   <a href={key[0]}>
+   {key[1]}
+   </a>
+   )
+   这样就可以实现点击文字跳转页面了
