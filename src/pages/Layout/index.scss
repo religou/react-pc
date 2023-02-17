@@ -1,0 +1,40 @@
+// 框架的样式
+.layout {
+  height: 100vh;
+}
+
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+// 顶部菜单栏的样式
+.menu {
+  padding-left: 175px;
+}
+
+// 用户信息的样式
+.user-info {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  padding-right: 20px;
+  color: #fff;
+
+  .user-name {
+    margin-right: 20px;
+  }
+
+  .user-logout {
+    display: inline-block;
+    cursor: pointer;
+  }
+}

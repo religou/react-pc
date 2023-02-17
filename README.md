@@ -105,3 +105,9 @@ This project was created for learning React
 3. 然后在 App.js 中使用 AuthComponent 包裹 Layout 组件
 
 4. 当访问 Layout 路由时，会先到 AuthComponent 组件中确认当前是否存在 Token
+
+## Layout 设定
+
+1. 修改 pages/Layout/index.js，在其中添加 AntD 的 Layout 组件
+
+2. 同时修改 pages/Layout/index.scss，使其高度可以占满整个屏幕，然后更新 Header 和右侧 userinfo

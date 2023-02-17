@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 // import Login from './pages/Login/index'
 import Login from '@/pages/Login'
-import Layout from '@/pages/Layout'
+import MainLayout from '@/pages/Layout'
 
 import { AuthComponent } from '@/components/AuthComponent'
 
@@ -16,7 +16,7 @@ function App () {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/" element={
             <AuthComponent>
-              <Layout />
+              <MainLayout />
             </AuthComponent>
           }>
           </Route>
