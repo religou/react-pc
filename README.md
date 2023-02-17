@@ -111,3 +111,15 @@ This project was created for learning React
 1. 修改 pages/Layout/index.js，在其中添加 AntD 的 Layout 组件
 
 2. 同时修改 pages/Layout/index.scss，使其高度可以占满整个屏幕，然后更新 Header 和右侧 userinfo
+
+## 二级路由配置
+
+1. 在 pages 文件夹下添加 DM、Home、Medical、PV、Stat、SystemConfig、User 页面
+
+2. 在添加的这些文件夹中每一个 index.js 都 export default
+
+3. 然后在 app.js 的 AuthComponent 中引入这些组件，这些组件是 MainLayout 的二级组件
+   所以这些组件也是需要路由鉴权之后，才可以访问的
+
+4. 在 Layout/index.js 中 MainLayout 中 Content 标签中使用 <Outlet /> 来设置这些
+   二级路由的出口

@@ -1,6 +1,9 @@
 import { LaptopOutlined, NotificationOutlined, UserOutlined, LogoutOutlined } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme, Popconfirm } from 'antd'
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+
+// 导入样式文件
 import './index.scss'
 
 // 将 Layout 进行解构
@@ -90,7 +93,7 @@ const MainLayout = () => {
               background: colorBgContainer,
             }}
           >
-            Content
+            <Outlet />
           </Content>
         </Layout>
       </Layout>

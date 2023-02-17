@@ -6,6 +6,14 @@ import MainLayout from '@/pages/Layout'
 
 import { AuthComponent } from '@/components/AuthComponent'
 
+import Home from '@/pages/Home'
+import DM from '@/pages/DM'
+import Medical from '@/pages/Medical'
+import PV from '@/pages/PV'
+import Stat from '@/pages/Stat'
+import SystemConfig from '@/pages/SystemConfig'
+import User from '@/pages/User'
+
 function App () {
   return (
 
@@ -19,6 +27,13 @@ function App () {
               <MainLayout />
             </AuthComponent>
           }>
+            <Route index element={< Home />}></Route>
+            <Route path='dm' element={< DM />}></Route>
+            <Route path='medical' element={< Medical />}></Route>
+            <Route path='pv' element={< PV />}></Route>
+            <Route path='stat' element={< Stat />}></Route>
+            <Route path='systemconfig' element={< SystemConfig />}></Route>
+            <Route path='user' element={< User />}></Route>
           </Route>
         </Routes>
       </div>
