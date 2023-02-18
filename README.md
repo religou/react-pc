@@ -137,3 +137,19 @@ This project was created for learning React
    </a>
    )
    这样就可以实现点击文字跳转页面了
+
+## 路由反向高亮
+
+1. 配置完成二级路由之后，在 Layout/index.js 文件中使用 raact-router-dom 中 useLocation
+   获取当前的路由
+
+2. 将路由结构出来，并设置为 <Menu /> 组件中 defaultSelectedKeys 属性值
+
+## 用户信息
+
+1. 在 store 文件夹中创建 user.Store.js 文件，然后在 index.js 中引用该文件
+
+2. 然后在 Layout/index.js 文件中使用 useEffect Hook，在该 Hook 中引用
+   getUserInfo 的方法
+
+3. 最后修改 user-name 标签中的数据，使用 {userStore.userInfo.name} 来显示
