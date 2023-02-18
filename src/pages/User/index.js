@@ -1,6 +1,6 @@
 function User () {
   return (
-    <div>User</div>
+    <div>User & Project</div>
   )
 }
 

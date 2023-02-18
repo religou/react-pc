@@ -1,4 +1,4 @@
-import { http, setToken, getToken } from '@/utils'
+import { http, setToken, getToken, removeToken } from '@/utils'
 import { makeAutoObservable } from 'mobx'
 
 class LoginStore {
@@ -23,6 +23,12 @@ class LoginStore {
 
     // 将 token 存储到本地
     setToken(this.token)
+  }
+
+  // 退出登录
+  logout = () => {
+    this.token = ''
+    removeToken()
   }
 }
 

@@ -33,7 +33,7 @@ function App () {
             <Route path='pv' element={< PV />}></Route>
             <Route path='stat' element={< Stat />}></Route>
             <Route path='systemconfig' element={< SystemConfig />}></Route>
-            <Route path='user' element={< User />}></Route>
+            <Route path='user_project' element={< User />}></Route>
           </Route>
         </Routes>
       </div>

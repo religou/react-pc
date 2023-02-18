@@ -151,5 +151,16 @@ This project was created for learning React
 
 2. 然后在 Layout/index.js 文件中使用 useEffect Hook，在该 Hook 中引用
    getUserInfo 的方法
+   注意：使用 observer 来包裹 MainLayout 组件，这样才可以关联数据
 
 3. 最后修改 user-name 标签中的数据，使用 {userStore.userInfo.name} 来显示
+
+## 退出
+
+1. 首先在 Layout/index.js 中修改 Popconfirm 的 onConfirm 属性
+
+2. 编写 confirm 函数，在函数中调用 loginStore 中的 logout 函数
+
+3. 编写 loginStore 中 logout 函数
+
+4. 并修改 Home 页面，再添加相应的一些元素与内容
