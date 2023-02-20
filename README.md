@@ -164,3 +164,15 @@ This project was created for learning React
 3. 编写 loginStore 中 logout 函数
 
 4. 并修改 Home 页面，再添加相应的一些元素与内容
+
+## token 失效时自动跳转至登录界面
+
+1. 由于页面的跳转在组件之外是无法使用，所以按照官方 github 中的建议，使用 history 包
+
+2. 使用命令 `npm add history -s` 安装，并在 utils 文件夹中创建 history.js 文件
+
+3. 在 history.js 中使用 createBrowserHistory 创建实例，并导出给后面使用
+
+4. 然后在 App.js 中导入 unstable_HistoryRouter，并用这个包裹整个 App.js 中的 div
+
+5. 最后在 http.js 添加响应拦截器部分，编写业务逻辑，使用 history.push
