@@ -1,7 +1,9 @@
 import { NotificationOutlined, ProjectOutlined, BarChartOutlined } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme } from 'antd'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+import * as echarts from 'echarts'
+import { useRef } from 'react'
 
 // 将 Layout 进行解构
 const { Content, Sider } = Layout
@@ -25,6 +27,36 @@ const items2 = [['项目列表', ProjectOutlined], ['项目进度', BarChartOutl
 })
 
 const Home = () => {
+  const domRef = useRef()
+
+  // echarts 组件
+  // 基于准备好的dom，初始化echarts实例
+  const chartInit = () => {
+    const myChart = echarts.init(domRef.current)
+    // 绘制图表
+    myChart.setOption({
+      title: {
+        text: '项目基本信息'
+      },
+      tooltip: {},
+      xAxis: {
+        data: ['筛选中', '筛选成功', '筛选失败', '已入组', '治疗结束', '研究结束']
+      },
+      yAxis: {},
+      series: [
+        {
+          name: '数量',
+          type: 'bar',
+          data: [5, 20, 36, 10, 10, 20]
+        }
+      ]
+    })
+  }
+
+  useEffect(() => {
+    chartInit()
+  }, [])
+
   const {
     token: { colorBgContainer },
   } = theme.useToken()
@@ -70,7 +102,7 @@ const Home = () => {
               background: colorBgContainer,
             }}
           >
-            Content
+            <div ref={domRef} style={{ width: '500px', height: '500px' }}></div>
           </Content>
         </Layout>
 

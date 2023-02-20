@@ -176,3 +176,14 @@ This project was created for learning React
 4. 然后在 App.js 中导入 unstable_HistoryRouter，并用这个包裹整个 App.js 中的 div
 
 5. 最后在 http.js 添加响应拦截器部分，编写业务逻辑，使用 history.push
+
+## 添加 echarts 组件
+
+1. 使用 `npm add echars -s` 安装 echarts
+
+2. 然后在 Home/index.js 文件中，使用 echarts.init 创建函数
+
+3. 使用 useRef 来创建 dom 节点
+
+4. 使用 useEffect 在该组件初始化的时候调用 echartInit 函数
+   注意：echarts 所在的 div 组件需要设置 width 和 height
