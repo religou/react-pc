@@ -1,9 +1,9 @@
 import { NotificationOutlined, ProjectOutlined, BarChartOutlined } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme } from 'antd'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
-import * as echarts from 'echarts'
-import { useRef } from 'react'
+
+import Bar from '@/components/Bar'
 
 // 将 Layout 进行解构
 const { Content, Sider } = Layout
@@ -27,36 +27,6 @@ const items2 = [['项目列表', ProjectOutlined], ['项目进度', BarChartOutl
 })
 
 const Home = () => {
-  const domRef = useRef()
-
-  // echarts 组件
-  // 基于准备好的dom，初始化echarts实例
-  const chartInit = () => {
-    const myChart = echarts.init(domRef.current)
-    // 绘制图表
-    myChart.setOption({
-      title: {
-        text: '项目基本信息'
-      },
-      tooltip: {},
-      xAxis: {
-        data: ['筛选中', '筛选成功', '筛选失败', '已入组', '治疗结束', '研究结束']
-      },
-      yAxis: {},
-      series: [
-        {
-          name: '数量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
-        }
-      ]
-    })
-  }
-
-  useEffect(() => {
-    chartInit()
-  }, [])
-
   const {
     token: { colorBgContainer },
   } = theme.useToken()
@@ -102,7 +72,9 @@ const Home = () => {
               background: colorBgContainer,
             }}
           >
-            <div ref={domRef} style={{ width: '1500px', height: '500px' }}></div>
+
+            <Bar title='血常规' xData={['筛选期', 'C1D1', 'C2D1', 'C3D1', 'C4D1']} yData={[10, 20, 30, 40, 50]} style={{ width: '800px', height: "300px" }} />
+            <Bar title='尿常规' xData={['筛选期', 'C1D1', 'C2D1', 'C3D1', 'C4D1']} yData={[10, 20, 30, 40, 50]} style={{ width: '800px', height: "300px" }} />
           </Content>
         </Layout>
 

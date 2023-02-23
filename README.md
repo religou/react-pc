@@ -187,3 +187,11 @@ This project was created for learning React
 
 4. 使用 useEffect 在该组件初始化的时候调用 echartInit 函数
    注意：echarts 所在的 div 组件需要设置 width 和 height
+
+## 封装 echarts 组件
+
+1. 在 components 文件夹中创建 Bar/index.js 文件，并在其中创建函数组件 Bar
+
+2. 将 pages/Home/index.js 中之前的内容替换成 Bar 组件
+
+3. 在 Bar 组件中添加参数，用来定制化组件的样式和数据
